@@ -50,12 +50,9 @@ h1, h2, h3, h4
     padding: .4em .6em
     border-radius: 9px
     border: 3px solid transparent
-    -webkit-transition-property: -webkit-transform
-    -moz-transition-property: -moz-transform
-    -ms-transition-property: -ms-transform
-    -o-transition-property: -o-transform
+    transition-property: -webkit-transform, -moz-transform, -ms-transform
     transition-duration: .35s
-    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
 
   .back
     background: #fff
@@ -80,10 +77,7 @@ h1
   margin: -57px 0 0
   width: 100%
   font-size: 82px
-  -webkit-transition-property: -webkit-transform, opacity
-  -moz-transition-property: -moz-transform, opacity
-  -ms-transition-property: -ms-transform, opacity
-  -o-transition-property: -o-transform, opacity
+  transition-property: opacity, -webkit-transform, -moz-transform, -ms-transform
   transition-duration: .35s
 
 .authentication
@@ -114,14 +108,11 @@ h1
     top: 50%; left: 0
     width: 50%
     box-shadow: 0 0 20px rgba($bgColor, .2)
-    -webkit-backface-visibility: hidden
-    -webkit-box-reflect: below 0 linear-gradient(top, transparent, 70% transparent, rgba(#fff, .2))
-    -webkit-transition-property: -webkit-transform
-    -moz-transition-property: -moz-transform
-    -ms-transition-property: -ms-transform
-    -o-transition-property: -o-transform
+    backface-visibility: hidden
+    transition-property: -webkit-transform, -moz-transform, -ms-transform
     transition-duration: .5s
     transition-timing-function: ease-in-out
+    -webkit-box-reflect: below 0 linear-gradient(top, transparent, 70% transparent, rgba(#fff, .2))
 
   .front { transform: translateY(-50%) rotateY(35deg) scale(.8) }
   .back { transform: translateY(-50%) rotateY(-145deg) scale(.8) }
@@ -138,10 +129,7 @@ h1
   text-align: left
   transform: translateY(-200%)
   opacity: 0
-  -webkit-transition-property: -webkit-transform, opacity
-  -moz-transition-property: -moz-transform, opacity
-  -ms-transition-property: -ms-transform, opacity
-  -o-transition-property: -o-transform, opacity
+  transition-property: opacity, -webkit-transform, -moz-transform, -ms-transform
   transition-duration: .45s
   transition-timing-function: ease-in-out
 
