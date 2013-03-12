@@ -1,0 +1,177 @@
+//= require utils/reset
+//= require_self
+
+@import 'utils/all'
+@import 'variables'
+
+// Base ----------------------------------------------------------------------
+* { box-sizing: border-box }
+body, html { size: 100% }
+
+html
+  font-size: 62.5%
+
+body
+  font: 300 1.8em/1.4 "open-sans", Helvetica Neue, Arial, sans-serif
+  color: $color
+  background-color: $bgColor
+  -webkit-font-smoothing: antialiased
+
+a { color: #fff }
+a:focus, a:hover { color: lighten($rdioColor, 10) }
+
+h1, h2, h3, h4
+  margin: .3em 0
+  font-family: "freight-sans-pro", Helvetica Neue, Arial, sans-serif
+
+// Layout --------------------------------------------------------------------
+[role="main"]
+  height: 100%
+  text-align: center
+
+// UI ------------------------------------------------------------------------
+.button
+  position: absolute
+  top: 50%; left: 50%
+  margin: -37px 0 0 -157px
+  display: block
+  font-size: 32px
+  font-weight: 400
+  opacity: 0
+  perspective: 600px
+  transform: scale(.5)
+  transition-property: opacity, -webkit-transform, -moz-transform, -ms-transform
+  transition-duration: .35s
+
+  span
+    position: relative
+    display: block
+    padding: .4em .6em
+    border-radius: 9px
+    border: 3px solid transparent
+    -webkit-transition-property: -webkit-transform
+    -moz-transition-property: -moz-transform
+    -ms-transition-property: -ms-transform
+    -o-transition-property: -o-transform
+    transition-duration: .35s
+    -webkit-backface-visibility: hidden
+
+  .back
+    background: #fff
+    transform: rotateX(180deg)
+    border-color: $rdioColor
+
+  .front
+    color: #fff
+    margin-bottom: -74px
+    background: $rdioColor
+
+.button:hover,
+.button:focus
+  .back { transform: rotateX(0deg) }
+  .front { transform: rotateX(180deg) }
+
+// Content -------------------------------------------------------------------
+h1
+  z-index: 1
+  position: absolute
+  top: 50%; left: 0
+  margin: -57px 0 0
+  width: 100%
+  font-size: 82px
+  -webkit-transition-property: -webkit-transform, opacity
+  -moz-transition-property: -moz-transform, opacity
+  -ms-transition-property: -ms-transform, opacity
+  -o-transition-property: -o-transform, opacity
+  transition-duration: .35s
+
+.authentication
+  $offset = 55px
+  h1 { transform: translateY(-($offset)) }
+  .button { opacity: 1; transform: scale(1) translateY($offset) }
+
+// Track ---------------------------------------------------------------------
+.showing-track
+  h1, .button { opacity: 0 }
+  .track { opacity: 1 }
+
+.track
+  height: 100%
+  font-size: 0
+  opacity: 0
+  overflow: hidden
+  transition: opacity .35s
+
+.track-image
+  position: relative
+  left: 5%
+  height: 100%
+  perspective: 800px
+
+  img
+    position: absolute
+    top: 50%; left: 0
+    width: 50%
+    box-shadow: 0 0 20px rgba($bgColor, .2)
+    -webkit-backface-visibility: hidden
+    -webkit-box-reflect: below 0 linear-gradient(top, transparent, 70% transparent, rgba(#fff, .2))
+    -webkit-transition-property: -webkit-transform
+    -moz-transition-property: -moz-transform
+    -ms-transition-property: -ms-transform
+    -o-transition-property: -o-transform
+    transition-duration: .5s
+    transition-timing-function: ease-in-out
+
+  .front { transform: translateY(-50%) rotateY(35deg) scale(.8) }
+  .back { transform: translateY(-50%) rotateY(215deg) scale(.8) }
+
+.track-image-flipped
+  .front { transform: translateY(-50%) rotateY(215deg) scale(.8) }
+  .back { transform: translateY(-50%) rotateY(35deg) scale(.8) }
+
+.track-info
+  z-index: 1
+  position: absolute
+  top: 50%; left: 52%
+  font-size: 27px
+  text-align: left
+  transform: translateY(-200%)
+  opacity: 0
+  -webkit-transition-property: -webkit-transform, opacity
+  -moz-transition-property: -moz-transform, opacity
+  -ms-transition-property: -ms-transform, opacity
+  -o-transition-property: -o-transform, opacity
+  transition-duration: .45s
+  transition-timing-function: ease-in-out
+
+  span { display: block }
+
+.track-info-in
+  opacity: 1
+  transform: translateY(-50%)
+
+.track-info-out
+  opacity: 0
+  transform: translateY(100%)
+
+.track-name
+  font-weight: 700
+  font-size: 42
+
+.track-artist
+  font-weight: 500
+  font-size: 32
+
+.fixed-background
+  z-index: -1
+  position: fixed
+  top: 0; left: 0
+  width: 100%; height: 100%
+  background-size: cover
+  opacity: .05
+
+// Media Queries -------------------------------------------------------------
+@media (max-width: 1152px) { .albums img { width: 25% } }
+@media (max-width: 864px) { .albums img { width: 33.3333% } }
+@media (max-width: 576px) { .albums img { width: 50% } }
+@media (max-width: 288px) { .albums img { width: 100% } }

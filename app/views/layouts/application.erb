@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>Rdio Display</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= stylesheet_link_tag :styles %>
+  <%= inline_script_tag :heliom %>
+  <script src="https://rdio.com/api/api.js?client_id=<%= ENV['RDIO_CLIENT_ID'] %>"></script>
+  <script type="text/javascript" src="//use.typekit.net/jnx6gdx.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+<body>
+  <section role="main">
+    <%= yield %>
+  </section>
+
+  <div class="fixed-background"></div>
+
+  <script>document.write('<script src="//cdnjs.cloudflare.com/ajax/libs/' +
+    ('__proto__' in {} && !/firefox\/3/i.test(navigator.userAgent) ?
+    'zepto/1.0rc1/zepto.min.js' : 'jquery/1.9.0/jquery.min.js') + '"><\/script>')</script>
+  <%= javascript_include_tag :scripts %>
+</body>
+</html>

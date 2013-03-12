@@ -1,0 +1,6 @@
+[submodule "app/assets/stylesheets/utils"]
+	path = app/assets/stylesheets/utils
+	url = https://github.com/heliom/stylus-utils.git
+[submodule "node_modules/nib"]
+	path = node_modules/nib
+	url = https://github.com/visionmedia/nib.git
