@@ -6,6 +6,8 @@
 Run `script/setup` for a one-step complete installation.
 
 ## Todo
+- `[ ]` “Pause” state
+- `[ ]` “Play something new” state
 - `[ ]` Make an OSX screensaver out of it (help…anyone?)
 
 [Kckstrt]: https://github.com/heliom/kckstrt
