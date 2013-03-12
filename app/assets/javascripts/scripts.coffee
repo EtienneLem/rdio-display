@@ -1,7 +1,8 @@
 class RdioDisplay
 
+  DEBUG = false
+
   constructor: ->
-    @debug = true
     @initiated = false
     @showingTrack = false
     @firstTrackAdded = false
@@ -118,7 +119,7 @@ class RdioDisplay
 
   # Debug
   log: ->
-    return unless @debug
+    return unless DEBUG
     console.log(argument) for argument in arguments
 
 # Global Scope
