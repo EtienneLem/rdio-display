@@ -2,6 +2,8 @@
 
 > A person reveals his character by nothing so clearly as the joke he resents. — [Georg Christoph Lichtenberg][GCL]
 
+![Rdio Display](https://s3.amazonaws.com/etiennelem/rdio-display.png)
+
 ## Setup
 Run `script/setup` for a one-step complete installation.
 
