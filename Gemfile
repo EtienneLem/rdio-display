@@ -15,6 +15,11 @@ group :development do
   gem 'awesome_print'
 end
 
+# Production
+group :production do
+  gem 'newrelic_rpm'
+end
+
 # Assets
 group :assets do
   gem 'sprockets'
